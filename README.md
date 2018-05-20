@@ -9,4 +9,4 @@ Number of Places | Time to Compute (seconds
 7 | 0.092
 8 | 4.997
 9 | 62.22
-10 | Currently running
+10 | 715.22
