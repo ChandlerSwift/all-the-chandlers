@@ -1,0 +1,17 @@
+chandler:visit-all-the-chandlers/ (master*) $ python -m cProfile chandler.py                                                 [23:16:30]
+('Chandler Bay', 'Chandler Township, Adams County, North Dakota', 'Chandler, Missouri', 'Chandler, Arizona', 'Chandler, Texas', 'Chandler, Minnesota', 'Chandler Air Force Station', 'Chandlers Valley, Pennsylvania', 'Chandler, Oklahoma', 'Chandler State Wayside', 'Chandler Gulch')
+(11 Chandlers)
+         79834571 function calls in 166.404 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      121    0.000    0.000    0.000    0.000 chandler.py:29(distance_between)
+        1  157.844  157.844  166.404  166.404 chandler.py:8(<module>)
+ 39916801    2.475    0.000    2.475    0.000 {len}
+      121    0.000    0.000    0.000    0.000 {math.atan2}
+      242    0.000    0.000    0.000    0.000 {math.cos}
+      242    0.000    0.000    0.000    0.000 {math.sin}
+      242    0.000    0.000    0.000    0.000 {math.sqrt}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+ 39916800    6.084    0.000    6.084    0.000 {range}
