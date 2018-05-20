@@ -46,15 +46,26 @@ def distance_between(coord1, coord2):
 
     return distance
 
+
+# because profiling revealed that the repeated computation of distances
+# was the thing that took the longest, here we cache them to save that
+# repeated expensive computation.
+distances = {}
+
+for first_chandler in chandlers:
+    for second_chandler in chandlers:
+        distances[(first_chandler, second_chandler)] = distance_between(first_chandler, second_chandler)
+
 min_dist=9999999999 # kilometers, starting with a wayyyy huge number
 best_route = None
 
 for order in itertools.permutations(chandlers):
     sum = 0
     for i in range(len(order) - 1):
-        sum += distance_between(order[i], order[i+1])
+        sum += distances[(order[i], order[i+1])]
     if sum < min_dist:
         min_dist = sum
         best_route = order
 
 print(best_route)
+print("(" + str(len(chandlers)) + " Chandlers)")
